@@ -52,16 +52,16 @@ std::optional<std::filesystem::path> DetectAndWriteConfiguration()
         if (GamePath && GamePath->string().find(GameName) != std::string::npos)
         {
             WriteConfiguration(*GamePath, "GamePath", "HK4E");
-            std::println("已探测到游戏路径: {}", GamePath->string());
-            std::println("游戏路径已经被写入到配置文件中！即将开始注入...");
+            std::cout << std::format("已探测到游戏路径: {}", GamePath->string()) << std::endl;
+            std::cout << "游戏路径已经被写入到配置文件中！即将开始注入..." << std::endl;
             std::this_thread::sleep_for(std::chrono::seconds(5));
             ExecuteCmdCommand("cls");
             return GamePath;
         }
         else
         {
-            std::println("未找到有效配置文件，正在尝试探测游戏路径...");
-            std::println("Game path detection failed. Retrying in 2 seconds...");
+            std::cout << "未找到有效配置文件，正在尝试探测游戏路径..." << std::endl;
+            std::cout << "Game path detection failed. Retrying in 2 seconds..." << std::endl;
             std::this_thread::sleep_for(std::chrono::seconds(2));
             ExecuteCmdCommand("cls");
         }
