@@ -33,4 +33,5 @@
 
 # Others
 
-
+.idea
+cmake-build-debug
