@@ -1,3 +1,0 @@
-C:/Users/Privia/Desktop/Coding/Project/cmake-build-debug/CMakeFiles/HoyoGameUnlocker.dir
-C:/Users/Privia/Desktop/Coding/Project/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Privia/Desktop/Coding/Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
