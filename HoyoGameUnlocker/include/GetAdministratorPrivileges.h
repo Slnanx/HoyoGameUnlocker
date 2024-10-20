@@ -4,7 +4,7 @@
 
 bool ExecuteCmdCommand(const std::string &command);
 void GetAdministratorPrivilege();
-int DetectAdministratorStatus(std::filesystem::path ProgramPath);
+int DetectAdministratorStatus(const std::filesystem::path& ProgramPath);
 void RestartAsAdministrator(const std::wstring &AppPath);
 
 #endif

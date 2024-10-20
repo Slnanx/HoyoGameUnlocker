@@ -1,15 +1,15 @@
-#include "..\include\GetGamePath.h"
+#include "../include/GetGamePath.h"
 
 // 将多字节字符转换为宽字符
 
 std::wstring Utf8ToWide(const std::string &str)
 {
     // 获取需要的宽字符字符串的长度
-    int wideLength = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, NULL, 0);
+    const int wideLength = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, nullptr, 0);
     if (wideLength == 0)
     {
         // 处理错误情况
-        return std::wstring();
+        return {};
     }
 
     // 创建宽字符字符串
@@ -51,7 +51,7 @@ DWORD GetProcessIdByName(const wchar_t *GameName)
 }
 
 // 获取游戏的可执行文件路径
-std::filesystem::path GetGamePath(std::string GameName)
+std::filesystem::path GetGamePath(const std::string& GameName)
 {
     // 获得游戏的PID
     DWORD GamePid = GetProcessIdByName(Utf8ToWide(GameName).c_str());
@@ -62,7 +62,7 @@ std::filesystem::path GetGamePath(std::string GameName)
 
     // 通过游戏PID获取进程句柄
     HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, false, GamePid);
-    if (hProcess == NULL)
+    if (hProcess == nullptr)
     {
         std::cerr << "无法打开进程！错误代码：" << GetLastError() << std::endl;
         return {}; // 如果无法打开进程，返回一个空的path对象

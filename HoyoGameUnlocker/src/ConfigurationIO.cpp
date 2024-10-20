@@ -1,18 +1,16 @@
-#include "..\include\ConfigurationIO.h"
-#include "..\include\Simpleini.h"
-#include "..\include\GetGamePath.h"
-#include "..\include\GameInfo.h"
-#include "..\include\GetAdministratorPrivileges.h"
+#include "../include/ConfigurationIO.h"
+#include "../include/Simpleini.h"
+#include "../include/GetGamePath.h"
+#include "../include/GameInfo.h"
+#include "../include/GetAdministratorPrivileges.h"
 
 std::optional<std::filesystem::path> LoadConfiguration()
 {
-    CSimpleIniA ini;
     // 如果加载成功，继续执行
-    if (ini.LoadFile(ConfigurationFileName) == SI_OK)
+    if (CSimpleIniA ini; ini.LoadFile(ConfigurationFileName) == SI_OK)
     {
-        const char *GamePathCStr = ini.GetValue("GamePath", "HK4E", "-1");
         // 如果路径有效且包含游戏名，返回路径
-        if (GamePathCStr && std::string(GamePathCStr).find(GameName) != std::string::npos)
+        if (const char *GamePathCStr = ini.GetValue("GamePath", "HK4E", "-1"); GamePathCStr && std::string(GamePathCStr).find(GameName) != std::string::npos)
         {
             return std::filesystem::path(GamePathCStr);
         }
@@ -44,12 +42,9 @@ void WriteConfiguration(const std::filesystem::path &GamePath, const char *Secti
 // 每两秒探测一次游戏路径，直到探测成功后返回游戏路径
 std::optional<std::filesystem::path> DetectAndWriteConfiguration()
 {
-    std::optional<std::filesystem::path> GamePath;
-
     while (true)
     {
-        GamePath = GetGamePath(GameName);
-        if (GamePath && GamePath->string().find(GameName) != std::string::npos)
+        if (std::optional<std::filesystem::path> GamePath = GetGamePath(GameName); GamePath && GamePath->string().find(GameName) != std::string::npos)
         {
             WriteConfiguration(*GamePath, "GamePath", "HK4E");
             std::cout << std::format("已探测到游戏路径: {}", GamePath->string()) << std::endl;

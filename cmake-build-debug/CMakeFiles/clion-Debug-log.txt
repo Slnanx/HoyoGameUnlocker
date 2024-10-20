@@ -1,0 +1,13 @@
+D:\Cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=D:/msys64/ucrt64/bin/mingw32-make.exe -DCMAKE_C_COMPILER=D:/msys64/ucrt64/bin/gcc.exe -DCMAKE_CXX_COMPILER=D:/msys64/ucrt64/bin/g++.exe -G "MinGW Makefiles" -S C:\Users\Privia\Desktop\Coding\Project -B C:\Users\Privia\Desktop\Coding\Project\cmake-build-debug
+-- Configuring done (0.2s)
+CMake Error at CMakeLists.txt:13 (add_executable):
+  Cannot find source file:
+
+    C:/Users/Privia/Desktop/Coding/Project/HoyoGameUnlocker/src/*.cpp
+
+
+CMake Error at CMakeLists.txt:13 (add_executable):
+  No SOURCES given to target: HoyoGameUnlocker
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
