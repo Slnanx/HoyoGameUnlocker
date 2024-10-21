@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -109,6 +109,8 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdclatest</LanguageStandard_C>
+      <EnableModules>true</EnableModules>
+      <BuildStlModules>true</BuildStlModules>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,6 +142,7 @@
     <ClCompile Include="src\GetAdministratorPrivileges.cpp" />
     <ClCompile Include="src\GetGamePath.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\ModuleFinder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ConfigurationIO.h" />
@@ -149,8 +152,12 @@
     <ClInclude Include="include\GameRunningStatus.h" />
     <ClInclude Include="include\GetAdministratorPrivileges.h" />
     <ClInclude Include="include\GetGamePath.h" />
+    <ClInclude Include="include\ModuleFinder.h" />
     <ClInclude Include="include\SimpleIni.h" />
     <ClInclude Include="include\SYSHeader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\icon\icon.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

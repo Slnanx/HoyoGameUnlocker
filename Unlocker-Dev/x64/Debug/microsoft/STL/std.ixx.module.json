@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "x64\\Debug\\microsoft/STL\\std.ixx.obj",
+            "outputs": [
+                "C:\\Users\\Privia\\Desktop\\Unlocker\\Unlocker-Dev\\Unlocker-Dev\\x64\\Debug\\vc143.pdb",
+                "x64\\Debug\\microsoft/STL\\",
+                "C:\\Users\\Privia\\Desktop\\Unlocker\\Unlocker-Dev\\Unlocker-Dev\\x64\\Debug\\microsoft\\STL\\std.ixx.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "std",
+                    "source-path": "d:\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.41.34120\\modules\\std.ixx",
+                    "is-interface": true
+                }
+            ],
+            "requires": []
+        }
+    ]
+}

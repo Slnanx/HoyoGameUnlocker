@@ -3,7 +3,7 @@
 #include "../include/GetGamePath.h"
 
 //检测游戏是否被启动
-bool CheckGameRunningStatus()
+bool CheckGameRunningStatus(std::string GameName)
 {
     if (const DWORD GamePid = GetProcessIdByName(Utf8ToWide(GameName).c_str()); GamePid != 0)
     {

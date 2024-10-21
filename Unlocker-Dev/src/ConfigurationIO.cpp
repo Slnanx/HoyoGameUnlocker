@@ -8,8 +8,9 @@ std::optional<std::filesystem::path> LoadConfiguration()
     // 如果加载成功，继续执行
     if (CSimpleIniA ini; ini.LoadFile(ConfigurationFileName) == SI_OK)
     {
+        const char* GamePathCStr = ini.GetValue("GamePath", "HK4E", "-1");
         // 如果路径有效且包含游戏名，返回路径
-        if (const char *GamePathCStr = ini.GetValue("GamePath", "HK4E", "-1"); GamePathCStr && std::string(GamePathCStr).find(GameName) != std::string::npos)
+        if ((GamePathCStr && (std::string(GamePathCStr).find(HK4ECNNAME) != std::string::npos) || std::string(GamePathCStr).find(HK4EOSNAME) != std::string::npos))
         {
             return std::filesystem::path(GamePathCStr);
         }
@@ -44,7 +45,8 @@ std::optional<std::filesystem::path> DetectAndWriteConfiguration()
 {
     while (true)
     {
-        if (std::optional<std::filesystem::path> GamePath = GetGamePath(GameName); GamePath && GamePath->string().find(GameName) != std::string::npos)
+        std::optional<std::filesystem::path> GamePath = GetGamePath(HK4ECNNAME);
+        if ((GamePath) &&((GamePath->string().find(HK4ECNNAME) != std::string::npos) || (GamePath->string().find(HK4EOSNAME) != std::string::npos)))
         {
             WriteConfiguration(*GamePath, "GamePath", "HK4E");
             std::println("已探测到游戏路径: {}", GamePath->string());
