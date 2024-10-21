@@ -31,13 +31,7 @@
 *.out
 *.app
 
-# Folders and other files
-.vs
-x64
-HoyoGameUnlocker
-*.sln
-*.vcxproj
-*.vcxproj.filters
-*.vcxproj.user
-*.gitignore
-*.gitattributes
+# Others
+
+.idea
+cmake-build-debug
