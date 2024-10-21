@@ -1,9 +1,5 @@
-﻿  ConfigurationIO.cpp
-  ConsoleShow.cpp
-  GameInfo.cpp
-  GameRunningStatus.cpp
-  GetAdministratorPrivileges.cpp
-  GetGamePath.cpp
+﻿  GameRunningStatus.cpp
   main.cpp
   正在生成代码...
+  LINK : 没有找到 C:\Users\Privia\Desktop\Unlocker\Unlocker-Dev\x64\Debug\Unlocker-Dev.exe 或上一个增量链接没有生成它；正在执行完全链接
   Unlocker-Dev.vcxproj -> C:\Users\Privia\Desktop\Unlocker\Unlocker-Dev\x64\Debug\Unlocker-Dev.exe

@@ -1,4 +1,6 @@
 #include "../include/GameRunningStatus.h"
+#include "../include/ConversionFunctions.h"
+#include "../include/GetGamePath.h"
 
 //检测游戏是否被启动
 bool CheckGameRunningStatus()

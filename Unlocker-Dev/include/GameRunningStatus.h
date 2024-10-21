@@ -3,8 +3,13 @@
 #ifndef GAMERUNNINGSTATUS_H
 #define GAMERUNNINGSTATUS_H
 
-#include "GetGamePath.h"
 #include "GameInfo.h"
+#include "SYSHeader.h"
+#include "ConversionFunctions.h"
+
 
 bool CheckGameRunningStatus();
+
+
+
 #endif //GAMERUNNINGSTATUS_H

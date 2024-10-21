@@ -1,5 +1,4 @@
 #include "../include/GetAdministratorPrivileges.h"
-#include "../include/SYSHeader.h"
 
 // 使用CreateProcess()函数执行cmd命令
 bool ExecuteCmdCommand(const std::string &command)

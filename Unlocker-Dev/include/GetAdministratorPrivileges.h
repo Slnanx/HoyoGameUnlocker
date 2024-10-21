@@ -3,8 +3,7 @@
 #ifndef GET_ADMINISTRATORPRIVILEGES_H
 #define GET_ADMINISTRATORPRIVILEGES_H
 
-
-#include "../include/SYSHeader.h"
+#include "SYSHeader.h"
 
 bool ExecuteCmdCommand(const std::string &command);
 void GetAdministratorPrivilege();

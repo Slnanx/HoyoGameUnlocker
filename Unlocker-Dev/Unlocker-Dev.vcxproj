@@ -70,6 +70,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <EnableMicrosoftCodeAnalysis>true</EnableMicrosoftCodeAnalysis>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -131,6 +134,7 @@
   <ItemGroup>
     <ClCompile Include="src\ConfigurationIO.cpp" />
     <ClCompile Include="src\ConsoleShow.cpp" />
+    <ClCompile Include="src\ConversionFunctions.cpp" />
     <ClCompile Include="src\GameInfo.cpp" />
     <ClCompile Include="src\GameRunningStatus.cpp" />
     <ClCompile Include="src\GetAdministratorPrivileges.cpp" />
@@ -140,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="include\ConfigurationIO.h" />
     <ClInclude Include="include\ConsoleShow.h" />
+    <ClInclude Include="include\ConversionFunctions.h" />
     <ClInclude Include="include\GameInfo.h" />
     <ClInclude Include="include\GameRunningStatus.h" />
     <ClInclude Include="include\GetAdministratorPrivileges.h" />
